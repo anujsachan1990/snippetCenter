@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		h1{
+			text-align: center;
+		}
+		.image-wrapper{
+			background: #000; /*Fallback in case image is not loaded.*/
+			margin-top:5000px;
+			text-align: center;
+		}
+		.image-wrapper img{
+			max-width: 100%;  /*Avoiding image overflow but ensuring it is not stretched as well.*/
+		}
+		.info{
+			padding-left: 20px;
+		}
+		.info li{
+			color: #3c3c3c;
+			padding: 10px;
+			text-align: justify;
+		}
+	</style>
+</head>
+<body>
+	<h1>Lazy Load and adaptive Images</h1>
+	<ol class="info"> 
+		<li>HTML and JS for the lazy load and adaptive behavior are pretty simply to understand and extend. </li>
+		<li>The Lazy Load Implemnetation in JS has currently ,for the purpose of Demo, has been made for Desktop, Tablet, Mobile and Mobile Retina (2x) images. You can feel free to extend the work for Retina Desktop, Retina Tablets or any other viewport for your scope of implementation.</li>
+		<li>The Image is way down at the bottom (pushed by explicitly adding margin-top to demonstrate the working lazy load). Resize the screen or test against devices to view the adaptive functionality.</li>
+		<li> The placeholder URL for the image ("Empty URL" has been used here)can be replaced based on usage.</li>
+	</ol>
+	<div class="image-wrapper">
+		<img 	src="Empty URL" 
+				data-mobile="assets/images/lazyLoadDemo/400by300.jpg" 
+				data-mobileRetina="assets/images/lazyLoadDemo/retina-image-sample.jpg" 
+				data-tablet="assets/images/lazyLoadDemo/640by480.jpg"  
+				data-desktop="assets/images/lazyLoadDemo/1024by768.jpg" />
+	</div>
+</body>
+	<script src="assets/js/libs/jquery.js"></script>
+	<script src="assets/js/lazyload-adaptive.js"></script>
+</html>

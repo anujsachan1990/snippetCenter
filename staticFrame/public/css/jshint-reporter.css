@@ -1,0 +1,22 @@
+/**
+*   dont delete the file, it's required by js hint reporting.
+*/
+
+    body{
+        background: rgb(122,122,122);
+    }
+    table{
+         background:white;
+    }
+    h1{
+        color:white;
+    }
+    select {
+        height: 30px;
+        margin: 20px 0;
+        outline: none;
+    }
+    option{
+        vertical-align: middle;
+        text-align: center;
+    }

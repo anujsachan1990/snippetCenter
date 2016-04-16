@@ -1,0 +1,121 @@
+/*
+ * Mixins allow document authors to define patterns of property value pairs, which can then be reused in other rule-sets.
+*/
+
+@mixin transform($params) {
+  @include css3-prefix('transform', $params);
+}
+
+@mixin css3-prefix($property, $value) {
+  -webkit-#{$property}: #{$value};
+  -moz-#{$property}: #{$value};
+  -ms-#{$property}: #{$value};
+  #{$property}: #{$value};
+}
+
+@function prefix($property, $prefixes: (webkit moz o ms)) {
+    $vendor-prefixed-properties: transform background-clip background-size;
+    $result: ();
+    @each $prefix in $prefixes {
+       @if index($vendor-prefixed-properties, $property) {
+         $property: -#{$prefix}-#{$property}
+       }
+       $result: append($result, $property);
+    }
+    @return $result;
+}
+ 
+@function trans-prefix($transition, $prefix: moz) {
+    $prefixed: ();
+    @each $trans in $transition {
+        $prop-name: nth($trans, 1);
+        $vendor-prop-name: prefix($prop-name, $prefix);
+        $prop-vals: nth($trans, 2);
+        $prefixed: append($prefixed, ($vendor-prop-name $prop-vals), comma);
+    }
+    
+    @return $prefixed;
+}
+ 
+@mixin transition($values...) {
+    $transitions: ();
+    @each $declaration in $values {
+        $prop: nth($declaration, 1);
+        $prop-opts: ();
+        $length: length($declaration);
+        @for $i from 2 through $length {
+            $prop-opts: append($prop-opts, nth($declaration, $i));   
+        }
+        $trans: ($prop, $prop-opts);
+        $transitions: append($transitions, $trans, comma);
+    }
+      
+    -webkit-transition: trans-prefix($transitions, webkit);
+    -moz-transition: trans-prefix($transitions, moz);
+    -o-transition: trans-prefix($transitions, o);
+    transition: $values;
+}
+/**
+ * media querries
+ * 1. Desktop first approach ( matching with bootstrap grid points )
+ * 2. Mobile first approach // commented as of now. If you need it then comment the  mobile first mixings
+ */
+
+// Desktop first approach
+@mixin XSVP {
+  @media screen and (max-width:479px) {
+    @content;
+  }
+}
+
+@mixin SVP {
+    @media screen and (max-width:767px) {
+        @content;
+    }
+}
+
+@mixin MVP {
+    @media screen and (max-width:991px) {
+        @content;
+    }
+}
+
+@mixin LVP {
+    @media screen and (max-width:1199px) {
+        @content;
+    }
+}
+
+@mixin XLVP {
+    @media screen and (max-width:1599px) {
+        @content;
+    }
+}
+
+// Mobile first approach
+/*
+@mixin SVP {
+    @media screen and (min-width:480px) {
+        @content;
+    }
+}
+
+@mixin MVP {
+    @media screen and (min-width:768px) {
+        @content;
+    }
+}
+
+@mixin LVP {
+    @media screen and (min-width:992px) {
+        @content;
+    }
+}
+
+@mixin XLVP {
+    @media screen and (min-width:1200px) {
+        @content;
+    }
+}
+*/
+

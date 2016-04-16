@@ -1,0 +1,9 @@
+{
+  "eqnull": true,
+  "eqeqeq": true,
+  "maxcomplexity":10,
+  "eqnull": true,
+  "funcscope": true,
+  "loopfunc": true,
+  "multistr" : true
+}
