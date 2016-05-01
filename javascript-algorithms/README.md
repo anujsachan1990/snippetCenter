@@ -6,4 +6,11 @@ Demonstrate how use of Data Structures and Algorithms which are generally associ
 Further to my article at 
 https://www.linkedin.com/pulse/algorithms-web-part-i-javascript-shourya-ranka 
 
+
+### Binary Search
+One of the primitive steps in moving ahead with alogrithms in searching across sorted arrays. I have added an option of binary seach with unsorted arrays for you !! (now that I sort it myself internally). Here is the Javascript Code that kickstarts our journey on Algorithms.
+
+### Linked List
+Just another ADT (Abstract Data Type) that is one of our stepping stones as we move ahead with coding Data Structures in Javascript. While everyone debates over arrays being more efficient than linked lists on the scales of performance but linked list have their own plus points.Every coin has two sides... and well I prefer to look at the better side... so let your requirement decide which is the better side.  
+
 -- Stay Tuned for some cool JavaScript Algorithms!!!! 
