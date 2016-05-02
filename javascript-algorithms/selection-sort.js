@@ -1,6 +1,6 @@
 /*!
-* bubble-sort.js
-* Javascript Implementation of Bubble Sort
+* selection-sort.js
+* Javascript Implementation of Selection Sort
 * 
 * @project   snippetCenter
 * @author    SHOURYA RANKA, sranka.2310@gmail.com
@@ -14,31 +14,32 @@ var snippetCenter = window.snippetCenter || {};
 
     "use strict";
     var Algorithms = function() {
-
         var swap = function(items, firstIndex, secondIndex){
             var temp = items[firstIndex];
             items[firstIndex] = items[secondIndex];
             items[secondIndex] = temp;
         }
 
-        var bubbleSort = function(items){
-            var len = items.length, i, j;
-            for (i=len-1; i >= 0; i--){
-                for (j=len-i; j >= 0; j--){
-                    if (items[j] < items[j-1]){
-                        swap(items, j, j-1);
+        var selectionSort = function(items){
+            var len = items.length, min, i, j;
+            for (i=0; i < len; i++){
+                min = i;
+                for (j=i+1; j < len; j++){
+                    if (items[j] < items[min]){
+                        min = j;
                     }
                 }
-                // console.log(items);   
-                // This can be used to view change in array per iteration.
+                if (i != min){
+                    swap(items, i, min);
+                }
             }
             return items;
         }
 
-        this.initBubbleSort = function(items){
-            var output = bubbleSort(items);
-                return output;
-                //console.log(output);
+        this.initSelectionSort = function(items){
+            var output = selectionSort(items);
+            return output;
+            //console.log(output); To View Output of Sort
         }
     };  
     snippetCenter.algorithms = new Algorithms();

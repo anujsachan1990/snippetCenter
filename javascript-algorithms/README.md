@@ -1,4 +1,7 @@
 # Javascirpt Algorithms
+Further to my article at 
+[Shourya Ranka @ LinkedIn](https://www.linkedin.com/pulse/algorithms-web-part-i-javascript-shourya-ranka)
+
 Demonstrate how use of Data Structures and Algorithms which are generally associated to programming languages and not scripting languages can help better optimize coding in JavaScript.
 
 ### Binary Search
@@ -10,8 +13,14 @@ The first of the sorting algorithms the order of time complexity is O(n^2). The 
 ### Linked List
 Just another ADT (Abstract Data Type) that is one of our stepping stones as we move ahead with coding Data Structures in Javascript. While everyone debates over arrays being more efficient than linked lists on the scales of performance but linked list have their own plus points.Every coin has two sides... and well I prefer to look at the better side... so let your requirement decide which is the better side.  
 
-## Coming Up
-Further to my article at 
-[Shourya Ranka @ LinkedIn](https://www.linkedin.com/pulse/algorithms-web-part-i-javascript-shourya-ranka)
+### Quick Sort
+One of the highly effcient sorts, with a time complexity of O(nlog(n)). The concept of pivot is hereby introduced. While there are multiple ways of chosing a pivot, we prefer to go for the central element as the PIVOT. It is in-place by implementation. By what is the best implementation of sort - Quick Sort is an Algorithm of Choice.
 
--- Stay Tuned for some cool JavaScript Algorithms!!!! 
+### Selection Sort
+The Selection Sort is a very basic sort. It works by finding the smallest element in the array and putting it at the beginning of the list and then repeating that process on the unsorted remainder of the data. So basically we can say, this is the default way to sort. When nothing works GO FOR IT....  And when you opt for Selection Sort O(n^2) is what you end up achieving as the average case time complexity for high scale inputs. 
+
+### Insertion Sort
+Another in the list of O(n^2) algorithms. It is a simple Sorting algorithm which sorts the array by shifting elements one by one. While there are not many reasons apart from Time Complexity on which I prefer algorithms, insertion sort is better than Selection Sort and Bubble Sort algorithms (all three being O(n^2) time complexity algos). The reason being it is a stable sort (that it preserves th order of the elements post sorting) and is in place. Also it is adaptive, which means it reduces its total number of steps if given a partially sorted list. Thus has a better time complexity in the best case scenarios like when the input is already sorted.
+
+## Coming Up
+-- Stay Tuned for some cool JavaScript Algorithms and their Real Time Implementation!!!! 
