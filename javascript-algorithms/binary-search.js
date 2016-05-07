@@ -33,9 +33,12 @@ var snippetCenter = window.snippetCenter || {};
 		    var output = (items[mid] != value) ? -1 : mid;
 		    return output;
     	}
+    	this.sortNumber = function(a,b){
 
+   				return a > b ? 1 : a < b ? -1 : 0;
+    	}
     	this.initBinarySearch = function(items,value){
-    		items = items.sort();
+    		items = items.sort(this.sortNumber);
     		var output = binarySearch(items,value);
     		if(output < 0)
 		    	console.log("Element is not Found in: ",items);
